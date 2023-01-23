@@ -1,11 +1,17 @@
 <div class="container-fluid">
     <h3>Showing All The Employees</h3>
+    <div>
+        <button (click)="refresh()" class="btn btn-primary">
+            Reload
+        </button>
+    </div>
     <table class='table'>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Salary</th>
+                <th><i class="fa fa-trash-o" style="font-size:30px;color: black"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -19,12 +25,10 @@
                     <td>
                         {{emp.salary}}
                     </td>
+                    <td>
+                        <i class="fa fa-trash-o" style="font-size:28px;color:red"></i>
+                    </td>
                 </tr>
         </tbody>
     </table>
-    <div>
-        <button (click)="refresh()" class="btn btn-primary">
-            Reload
-        </button>
-    </div>
 </div>
