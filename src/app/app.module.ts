@@ -7,7 +7,8 @@ import { StoreComponent } from './store/store.component';
 import { UpdateComponent } from './update/update.component';
 import { FindAllComponent } from './find-all/find-all.component';
 import { FindComponent } from './find/find.component';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,10 @@ import { FindComponent } from './find/find.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
