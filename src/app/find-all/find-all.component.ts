@@ -7,6 +7,7 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./find-all.component.css']
 })
 export class FindAllComponent {
+    message: undefined | string=undefined;
     employees : any =[];
     constructor(public service:EmployeeService){ }
     refresh(): void{
@@ -15,5 +16,18 @@ export class FindAllComponent {
         next:(value)=> this.employees=value,
         error:(err)=> console.log(err)
         })
+    }
+
+    delete(id: number){
+      this.service.delete(id).subscribe({
+        next:(value)=>{
+          // {message":"}
+          this.message=value.message;
+          this.refresh();
+          // make message empty after 5s
+          setTimeout(()=> this.message= "",5000);
+        },
+        error:(err)=>console.log(err)
+      });
     }
 }

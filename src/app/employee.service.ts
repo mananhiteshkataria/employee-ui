@@ -11,5 +11,8 @@ export class EmployeeService {
       fetchAll():Observable<any>{
         return this.http.get(`${this.baseUri}/findAll`);
       }
+      delete(id :number): Observable<any>{
+        return this.http.delete(`http://localhost:9090/api/delete/${id}`);
+      }
    }
 

@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <h3>Showing All The Employees</h3>
     <div>
@@ -5,16 +6,20 @@
             Reload
         </button>
     </div>
-    <table class='table'>
-        <thead>
+    
+    <table class='table table-light'>
+        <caption>Employee Data</caption>
+        <thead  class="table-dark">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Salary</th>
-                <th><i class="fa fa-trash-o" style="font-size:30px;color: black"></i></th>
+                <th><i class="fa fa-trash-o" id="icon1"></i></th>
             </tr>
         </thead>
         <tbody>
+                <span *ngIf="message"class="alert alert alert-danger">
+                    {{message}}</span>
                 <tr *ngFor="let emp of employees">
                     <td>
                         {{emp.id}}
@@ -26,9 +31,13 @@
                         {{emp.salary}}
                     </td>
                     <td>
-                        <i class="fa fa-trash-o" style="font-size:28px;color:red"></i>
+                        <button id="button1" aria-label="delete" 
+                        (click)="delete(+emp.id)">
+                        <i class="fa fa-trash-o" id="icon2"></i>
+                        </button>
                     </td>
                 </tr>
         </tbody>
+        
     </table>
 </div>
