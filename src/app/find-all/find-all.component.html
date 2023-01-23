@@ -1,10 +1,4 @@
 <div class="container">
-    <h3>Showing All The Employees</h3>
-    <div>
-        <button (click)="refresh()" class="btn btn-primary">
-            Reload
-        </button>
-    </div>
     <table class='table table-hover table-bordered table-light' id="table1">
         <caption>Employee Data</caption>
         <thead  class="table-dark">
@@ -36,6 +30,10 @@
                     </td>
                 </tr>
         </tbody>
-        
+        <div>
+            <button (click)="refresh()" class="btn btn-primary">
+                Reload
+            </button>
+        </div>
     </table>
 </div>
