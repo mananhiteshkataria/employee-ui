@@ -9,5 +9,11 @@ import { EmployeeService } from '../employee.service';
 export class FindAllComponent {
     employees : any =[];
     constructor(public service:EmployeeService){ }
-    
+    refresh(): void{
+      this.service.fetchAll()
+      .subscribe({
+        next:(value)=> this.employees=value,
+        error:(err)=> console.log(err)
+        })
+    }
 }
