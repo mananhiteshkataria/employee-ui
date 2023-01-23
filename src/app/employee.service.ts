@@ -14,6 +14,12 @@ export class EmployeeService {
       delete(id :number): Observable<any>{
         return this.http.delete(`${this.baseUri}/delete/${id}`);
       }
-      
+
+      // store employee using HTTP:POST
+      store (employee :any):Observable<any>{
+        return this.http.post(`${this.baseUri}/save`,employee);
+        // use form builder with id,name and salary
+        // and call this store function from store component
+      }
    }
 

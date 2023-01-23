@@ -1,1 +1,22 @@
-<p>store works!</p>
+<div class="form-group">
+    <div class="row">
+        <div class="col-5">
+        <form [formGroup]="employeeForm">
+
+            <label for="id">Id: </label>
+            <input  class="form-control" id="id" type="number"  formControlName="id"><br>
+          
+            <label for="Name">Name: </label>
+            <input class="form-control" id="Name" type="text" autocomplete="off" formControlName="name"><br>
+    
+            <label for="Salary">Salary: </label>
+            <input class="form-control" id="Salary" type="number" autocomplete="off" formControlName="salary"><br>
+            
+            <p>Complete the form to enable button.</p>
+            <button (click)="onSubmit()" class="btn btn-primary" type="submit" [disabled]="!employeeForm.valid">Submit</button>
+          </form>
+          <div *ngIf="message" class="alert alert-success">{{message}}</div>
+        </div>
+    </div>
+</div>
+    
